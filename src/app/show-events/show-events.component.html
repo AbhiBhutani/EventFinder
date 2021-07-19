@@ -1,0 +1,21 @@
+<input type="button" class="btn btn-primary" value="Get Events From Server" (click)="getEvents()">
+
+<!-- In case there is an issue in getting data from server, just another way of showing some data-->
+<input type="button" class="btn btn-secondary" value="Get Events From Local" (click)="getEventsFromLocal()">
+
+
+<div *ngIf="events && events.length > 0">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let event of events">
+				<td>{{event.name}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
